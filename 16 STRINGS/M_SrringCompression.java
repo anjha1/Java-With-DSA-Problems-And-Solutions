@@ -1,0 +1,21 @@
+public class M_SrringCompression {
+    public static String SrringCompression(String sc) {
+        StringBuilder str=new StringBuilder("");
+        for(int i=0;i<sc.length();i++){
+            Integer count=1;
+            while(i<sc.length()-1 && sc.charAt(i)==sc.charAt(i+1)){
+                count++;
+                i++;
+            }
+            str.append(sc.charAt(i));
+            if(count>1){
+                str.append(count);
+            }
+        }
+        return str.toString();
+    }
+    public static void main(String[] args) {
+        String sc="aaabbcccdd";
+        System.out.println(SrringCompression(sc));
+    }
+}
